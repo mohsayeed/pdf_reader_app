@@ -204,6 +204,7 @@ def getDict(excel_sheet, dict):
         if (count == length_sheet):
             list_dict_res.append(dict_temp)
             return list_dict_res
+    return list_dict_res
 
 
 
