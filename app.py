@@ -86,11 +86,11 @@ def upload_file():
 
 @app.route('/delete')
 def delete():
-    # temp_list = os.listdir('temp')
-    # for i in temp_list:
-    #     os.unlink('temp/'+i)
-    os.chmod('temp', stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO)
-    shutil.rmtree(path='temp')
+    temp_list = os.listdir('temp')
+    for i in temp_list:
+        os.unlink('temp/'+i)
+    # os.chmod('temp', stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO)
+    # shutil.rmtree(path='temp')
     return redirect(url_for('upload_file'))
 
 def getDict(excel_sheet, dict):
