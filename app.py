@@ -1,12 +1,10 @@
 import os
 from PyPDF2 import  PdfReader, PdfWriter
-from flask import Flask, request, url_for
+from flask import Flask, render_template, request, url_for
 from flask import redirect
 import pypdfium2 as pdfium
 from PIL import Image
-import shutil
 import os
-import stat
 
 import pandas as pd
 
@@ -51,7 +49,7 @@ def upload_file():
             for page_number in range(n_pages):
                 page = pdf.get_page(page_number)
                 pil_image = page.render_topil(
-                    scale=300/72, 
+                    scale=100/72, 
                     rotation=0,
                     crop=(0, 0, 0, 0),
                     greyscale=False,
@@ -72,16 +70,7 @@ def upload_file():
         img1st.save(r'static/final_res.pdf',
                     save_all=True, append_images=img)            
         return redirect(url_for('static', filename='final_res.pdf'))
-    return '''
-    <!doctype html>
-    <title>Upload an excel file</title>
-    <h1>Excel file upload (csv, xlsx only)</h1>
-    <form action="" method=post enctype=multipart/form-data>
-    <p><input type=file name=file><input type=submit value=Upload>
-    
-    </form>
-    <a href="/delete" >Delete Cache Folders</a>
-    '''
+    return render_template('index.html')
 
 
 @app.route('/delete')
