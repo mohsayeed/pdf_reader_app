@@ -49,7 +49,7 @@ def upload_file():
             for page_number in range(n_pages):
                 page = pdf.get_page(page_number)
                 pil_image = page.render_topil(
-                    scale=100/72, 
+                    scale=200/72, 
                     rotation=0,
                     crop=(0, 0, 0, 0),
                     greyscale=False,
@@ -97,16 +97,16 @@ def getDict(excel_sheet, dict):
         dict_temp['BOOKS_1'] = excel_sheet['Books'][count]
         dict_temp['OTHERS_1'] = excel_sheet['Other'][count]
         dict_temp['CONTACT_1'] = excel_sheet['Contact'][count]
-        dict_temp['PAY_1'] = excel_sheet['Pay Amount'][count]
+        dict_temp['PAY_1'] = str(excel_sheet['Pay Amount'][count].date())+"        "
         dict_temp['TOTAL_1'] = excel_sheet['Total'][count]
-        dict_temp['FEES_NOTICE_1'] = excel_sheet['Fee Notice Date'][count]
+        dict_temp['FEES_NOTICE_1'] = excel_sheet['Fee Notice Date'][count].date()
         dict_temp['STUDENT_NAME_1'] = excel_sheet['StudentName'][count]
         dict_temp['IDNO_1'] = excel_sheet['IDNo'][count]
         dict_temp['OLD_BALANCE_1'] = excel_sheet['Old Bal'][count]
         dict_temp['PVT_TUTION_1'] = excel_sheet['Pvt Tution'][count]
         count = count + 1
 
-        dict_temp['FEES_NOTICE_2'] = excel_sheet['Fee Notice Date'][count]
+        dict_temp['FEES_NOTICE_2'] = excel_sheet['Fee Notice Date'][count].date()
         dict_temp['STUDENT_NAME_2'] = excel_sheet['StudentName'][count]
         dict_temp['FATHER_NAME_2'] = excel_sheet['Father/GuardianName'][count]
         dict_temp['IDNO_2'] = excel_sheet['IDNo'][count]
@@ -117,12 +117,12 @@ def getDict(excel_sheet, dict):
         dict_temp['PVT_TUTION_2'] = excel_sheet['Pvt Tution'][count]
         dict_temp['OTHERS_2'] = excel_sheet['Other'][count]
         dict_temp['TOTAL_2'] = excel_sheet['Total'][count]
-        dict_temp['PAY_2'] = excel_sheet['Pay Amount'][count]
+        dict_temp['PAY_2'] = str(excel_sheet['Pay Amount'][count].date())+"        "
         dict_temp['CONTACT_2'] = excel_sheet['Contact'][count]
         count += 1
 
         dict_temp['CONTACT_3'] = excel_sheet['Contact'][count]
-        dict_temp['PAY_3'] = excel_sheet['Pay Amount'][count]
+        dict_temp['PAY_3'] = str(excel_sheet['Pay Amount'][count].date())+"        "
         dict_temp['TOTAL_3'] = excel_sheet['Total'][count]
         dict_temp['OTHERS_3'] = excel_sheet['Other'][count]
         dict_temp['PVTTUTION_3'] = excel_sheet['Pvt Tution'][count]
@@ -133,7 +133,7 @@ def getDict(excel_sheet, dict):
         dict_temp['IDNO_3'] = excel_sheet['IDNo'][count]
         dict_temp['FATHER_NAME_3'] = excel_sheet['Father/GuardianName'][count]
         dict_temp['STUDENTNAME_3'] = excel_sheet['StudentName'][count]
-        dict_temp['FEES_NOTICE_3'] = excel_sheet['Fee Notice Date'][count]
+        dict_temp['FEES_NOTICE_3'] = excel_sheet['Fee Notice Date'][count].date()
         count += 1
 
         dict_temp['CLASS_4'] = excel_sheet['Class'][count]
@@ -142,8 +142,8 @@ def getDict(excel_sheet, dict):
         dict_temp['OTHERS_4'] = excel_sheet['Other'][count]
         dict_temp['TOTAL_4'] = excel_sheet['Total'][count]
         dict_temp['CONTACT_4'] = excel_sheet['Contact'][count]
-        dict_temp['PAY_4'] = excel_sheet['Pay Amount'][count]
-        dict_temp['FEES_NOTICE_4'] = excel_sheet['Fee Notice Date'][count]
+        dict_temp['PAY_4'] = str(excel_sheet['Pay Amount'][count].date())+"        "
+        dict_temp['FEES_NOTICE_4'] = excel_sheet['Fee Notice Date'][count].date()
         dict_temp['IDNO_4'] = excel_sheet['IDNo'][count]
         dict_temp['STUDENT_NAME_4'] = excel_sheet['StudentName'][count]
         dict_temp['FATHER_NAME_4'] = excel_sheet['Father/GuardianName'][count]
@@ -159,9 +159,9 @@ def getDict(excel_sheet, dict):
         dict_temp['BOOKS_1'] = excel_sheet['Books'][count]
         dict_temp['OTHERS_1'] = excel_sheet['Other'][count]
         dict_temp['CONTACT_1'] = excel_sheet['Contact'][count]
-        dict_temp['PAY_1'] = excel_sheet['Pay Amount'][count]
+        dict_temp['PAY_1'] = str(excel_sheet['Pay Amount'][count].date())+"        "
         dict_temp['TOTAL_1'] = excel_sheet['Total'][count]
-        dict_temp['FEES_NOTICE_1'] = excel_sheet['Fee Notice Date'][count]
+        dict_temp['FEES_NOTICE_1'] = excel_sheet['Fee Notice Date'][count].date()
         dict_temp['STUDENT_NAME_1'] = excel_sheet['StudentName'][count]
         dict_temp['IDNO_1'] = excel_sheet['IDNo'][count]
         dict_temp['OLD_BALANCE_1'] = excel_sheet['Old Bal'][count]
@@ -170,7 +170,7 @@ def getDict(excel_sheet, dict):
         if (count == length_sheet):
             list_dict_res.append(dict_temp)
             return list_dict_res
-        dict_temp['FEES_NOTICE_2'] = excel_sheet['Fee Notice Date'][count]
+        dict_temp['FEES_NOTICE_2'] = excel_sheet['Fee Notice Date'][count].date()
         dict_temp['STUDENT_NAME_2'] = excel_sheet['StudentName'][count]
         dict_temp['FATHER_NAME_2'] = excel_sheet['Father/GuardianName'][count]
         dict_temp['IDNO_2'] = excel_sheet['IDNo'][count]
@@ -181,14 +181,14 @@ def getDict(excel_sheet, dict):
         dict_temp['PVT_TUTION_2'] = excel_sheet['Pvt Tution'][count]
         dict_temp['OTHERS_2'] = excel_sheet['Other'][count]
         dict_temp['TOTAL_2'] = excel_sheet['Total'][count]
-        dict_temp['PAY_2'] = excel_sheet['Pay Amount'][count]
+        dict_temp['PAY_2'] = str(excel_sheet['Pay Amount'][count].date())+"        "
         dict_temp['CONTACT_2'] = excel_sheet['Contact'][count]
         count += 1
         if (count == length_sheet):
             list_dict_res.append(dict_temp)
             return list_dict_res
         dict_temp['CONTACT_3'] = excel_sheet['Contact'][count]
-        dict_temp['PAY_3'] = excel_sheet['Pay Amount'][count]
+        dict_temp['PAY_3'] = str(excel_sheet['Pay Amount'][count].date())+"        "
         dict_temp['TOTAL_3'] = excel_sheet['Total'][count]
         dict_temp['OTHERS_3'] = excel_sheet['Other'][count]
         dict_temp['PVTTUTION_3'] = excel_sheet['Pvt Tution'][count]
@@ -199,7 +199,7 @@ def getDict(excel_sheet, dict):
         dict_temp['IDNO_3'] = excel_sheet['IDNo'][count]
         dict_temp['FATHER_NAME_3'] = excel_sheet['Father/GuardianName'][count]
         dict_temp['STUDENTNAME_3'] = excel_sheet['StudentName'][count]
-        dict_temp['FEES_NOTICE_3'] = excel_sheet['Fee Notice Date'][count]
+        dict_temp['FEES_NOTICE_3'] = excel_sheet['Fee Notice Date'][count].date()
         count += 1
         if (count == length_sheet):
             list_dict_res.append(dict_temp)
