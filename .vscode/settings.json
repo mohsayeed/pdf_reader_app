@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4fdf6d49-d884-408a-a3f1-ae54fddfe9e6/AppServices/subscriptions/4fdf6d49-d884-408a-a3f1-ae54fddfe9e6/resourceGroups/commonrsc/providers/Microsoft.Web/sites/pythonflasktest",
+    "appService.deploySubpath": "."
+}
